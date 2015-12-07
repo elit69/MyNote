@@ -1,0 +1,49 @@
+<mvc:form id="delete" action="delete" method="POST">
+  <input type="hidden" name="id" value="${stu.id}">
+  <input type="submit" value="Delete">
+</mvc:form>
+#################################
+  @RequestMapping(value = "delete" ,  method = RequestMethod.POST)
+  public String delete(ModelMap model,  @RequestParam(value="id", required=true) int stuId){
+    System.out.println("delete action" + stuId);
+    studentDao.delete(stuId);   
+    return "redirect:/";
+  }
+####################################
+<input type="number" class="form-control" maxlength="100"
+	value="${stu.id}" disabled>
+<input type="hidden" name="id" value="${stu.id}">
+####################################
+select *
+from pg_stat_activity
+where datname = 'mydatabasename'
+###################################
+input disabled vs readonly
+a vs button vs input
+###################################
+<div class="col-sm-6 center-block">
+	<div class="form-group">
+		<button type="submit" id="btnAdd" class="btn btn-primary"
+			style="width: 200px;">
+			<i class="fa fa-pencil"></i>&nbsp;&nbsp;Update
+		</button>
+	</div>
+</div>
+#######################################
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.lit.hw1.dto.Student"%>
+##################################
+ps.setString(1, "%" + keyword + "%");
+##################################
+jetty-distribution-9.2.13.v20150730
+java -jar start.jar --debug
+##################################
+java -cp jetty-runner-9.2.13.v20150730.jar org.eclipse.jetty.runner.Runner hw1.war
+http://localhost:8080
+
+java -cp jetty-runner-9.2.13.v20150730.jar org.eclipse.jetty.runner.Runner --stop-port 8181 --stop-key abc123 --stop
+
+java -cp jetty-runner-9.2.13.v20150730.jar org.eclipse.jetty.runner.Runner --stop
+
+###################################
+el igornre
