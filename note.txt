@@ -56,3 +56,9 @@ http://stackoverflow.com/questions/22767205/spring-security-exclude-url-patterns
 -limit role_author to view and add only
 -show username
 -quiery current user profile
+###################################################
+-deny /logout
+-log4j
+-return json httpbasic(right way)
+-spring social
+-remember me
