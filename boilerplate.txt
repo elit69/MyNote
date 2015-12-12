@@ -1,0 +1,20 @@
+UPDATE pg_database SET datistemplate='false' WHERE datname='template1';
+DROP DATABASE template1;
+create database template1; 
+UPDATE pg_database SET datistemplate='true' WHERE datname='template1';
+#####################################################################
+var cols = 16;
+var data=[];
+var rows = 16;
+var time = 100;
+for(var i=0; i<cols; i++) {
+  data[i] = [];
+  for(var ii=0; ii<rows; ii++) {
+    var t = time/1000 + i/10 + ii/10;
+    var red = ((Math.sin(t)+2)*80 | 0) * 0x10000;
+    var green = ((Math.sin(t+2)+2)*80 | 0) * 0x100;
+    var blue = ((Math.sin(t+4)+2)*80 | 0);
+    var color = red + green + blue;    
+    data[i][ii] = (color|0x1000000).toString(16).substr(1);
+  }
+}
