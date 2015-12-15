@@ -62,3 +62,8 @@ http://stackoverflow.com/questions/22767205/spring-security-exclude-url-patterns
 -return json httpbasic(right way)
 -spring social
 -remember me
+-connection pool
+#############################################
+WITH roleID AS ( SELECT ID FROM tbrole WHERE ROLE = 'ROLE_ADMIN')
+insert into tbuser_role
+SELECT ID,	6 FROM	roleID
