@@ -81,4 +81,5 @@ http://stackoverflow.com/questions/22767205/spring-security-exclude-url-patterns
 	.antMatchers("/login").permitAll()//hasRole("ANONYMOUS");
 	.antMatchers("/resources/**").permitAll()
 	.antMatchers("/**").hasAnyRole("ADMIN", "AUTHOR");
-###################################################
+###################################################sublime text reindent keybind
+{ "keys": ["ctrl+shift+r"], "command": "reindent" , "args": { "single_line": false } }
