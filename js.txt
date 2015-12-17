@@ -1,8 +1,4 @@
-UPDATE pg_database SET datistemplate='false' WHERE datname='template1';
-DROP DATABASE template1;
-create database template1; 
-UPDATE pg_database SET datistemplate='true' WHERE datname='template1';
-#####################################################################
+#################################################js to change color animation
 var cols = 16;
 var data=[];
 var rows = 16;

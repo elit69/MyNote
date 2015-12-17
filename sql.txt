@@ -1,0 +1,13 @@
+############################################# using with to insert select
+WITH roleID AS ( SELECT ID FROM tbrole WHERE ROLE = 'ROLE_ADMIN')
+insert into tbuser_role
+SELECT ID,	6 FROM	roleID
+####################################see connection postgres
+select *
+from pg_stat_activity
+where datname = 'mydatabasename'
+####################################reset template postgres
+UPDATE pg_database SET datistemplate='false' WHERE datname='template1';
+DROP DATABASE template1;
+create database template1; 
+UPDATE pg_database SET datistemplate='true' WHERE datname='template1';

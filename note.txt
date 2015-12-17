@@ -1,3 +1,38 @@
+<mvc:form id="delete" action="delete" method="POST">
+  <input type="hidden" name="id" value="${stu.id}">
+  <input type="submit" value="Delete">
+</mvc:form>
+#################################
+  @RequestMapping(value = "delete" ,  method = RequestMethod.POST)
+  public String delete(ModelMap model,  @RequestParam(value="id", required=true) int stuId){
+    System.out.println("delete action" + stuId);
+    studentDao.delete(stuId);   
+    return "redirect:/";
+  }
+####################################
+<input type="number" class="form-control" maxlength="100"
+	value="${stu.id}" disabled>
+<input type="hidden" name="id" value="${stu.id}">
+###################################
+input disabled vs readonly
+a vs button vs input
+###################################
+<div class="col-sm-6 center-block">
+	<div class="form-group">
+		<button type="submit" id="btnAdd" class="btn btn-primary"
+			style="width: 200px;">
+			<i class="fa fa-pencil"></i>&nbsp;&nbsp;Update
+		</button>
+	</div>
+</div>
+#######################################
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.lit.hw1.dto.Student"%>
+##################################
+ps.setString(1, "%" + keyword + "%");
+###################################
+el igornre
+#########################mysql in wamp
 max_allowed_packet=500M
 my.ini/my.cnf
 ########################
@@ -63,7 +98,4 @@ http://stackoverflow.com/questions/22767205/spring-security-exclude-url-patterns
 -spring social
 -remember me
 -connection pool
-#############################################
-WITH roleID AS ( SELECT ID FROM tbrole WHERE ROLE = 'ROLE_ADMIN')
-insert into tbuser_role
-SELECT ID,	6 FROM	roleID
+###################################################

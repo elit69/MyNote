@@ -1,0 +1,21 @@
+#################################################jetty runner run all file war in current folder
+@echo off
+setlocal enabledelayedexpansion
+set /a "x = 2999"
+for %%f in (*.war) do (
+	set /a x = !x! + 1 
+	start java -cp jetty-runner-9.3.5.v20151012.jar org.eclipse.jetty.runner.Runner --port !x! %%f	
+)
+endlocal
+pause
+##################################################jetty runn with port
+ java -jar start.jar --debug jetty.http.port=4000
+##################################
+jetty-distribution-9.2.13.v20150730		java 7
+jetty-runner-9.3.5.v20151012			java 8
+java -jar start.jar --debug
+##################################
+java -cp jetty-runner-9.2.13.v20150730.jar org.eclipse.jetty.runner.Runner hw1.war
+http://localhost:8080
+java -cp jetty-runner-9.2.13.v20150730.jar org.eclipse.jetty.runner.Runner --stop-port 8181 --stop-key abc123 --stop
+java -cp jetty-runner-9.2.13.v20150730.jar org.eclipse.jetty.runner.Runner --stop
