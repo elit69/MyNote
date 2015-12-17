@@ -1,0 +1,14 @@
+#############################################to do list
+-do not delete user urself
+-pagination
+-limit rows
+-limit role_author to view and add only
+-show username
+-quiery current user profile
+###################################################
+-deny /logout
+-log4j
+-return json httpbasic(right way)
+-spring social
+-remember me
+-connection pool
