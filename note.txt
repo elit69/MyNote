@@ -99,3 +99,4 @@ http://stackoverflow.com/questions/22767205/spring-security-exclude-url-patterns
 -remember me
 -connection pool
 ###################################################
+test
