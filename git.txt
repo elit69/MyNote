@@ -1,0 +1,14 @@
+###############################first push
+git push origin:master
+###############################remember username password in window
+git config --global credential.helper wincred
+###############################see current changes
+git diff
+gitk
+###############################fix conflicts and run 
+git revert --continue
+###############################cancel the revert operation
+git revert --abort
+###############################other
+git remote -v
+git config credential.helper store

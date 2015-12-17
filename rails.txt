@@ -1,0 +1,200 @@
+#################rails quote
+D.R.Y = don't repeat yourself
+convention over configuration
+RESTful routes/resources = Representational State Transfer
+  (GET, POST, PUT, DELETE)
+#################rails cmd
+rails new app
+rails c
+rails s
+rails g/d controller controller_name
+rails g/d model Table field:datatype . . .
+rails g/d migration migration_name field:datatype . . .
+
+livereloadx -s --include *.erb
+livereloadx -y http://localhost:3000/ --include *.erb
+
+#################things to know well
+remove column
+#################active record/CRUD
+
+variable = {key:value}
+hash syntax:   variable[:key] => value 
+dot syntax:    variable.attributes => value 
+
+
+Singular & Uppercase => class name
+Plural $ Lowercase => table name
+
+##Create
+  t= TableName.new
+  t.key = value
+  t.save
+
+  t=TableName.new(hash)
+  t.save
+
+  TableName.create(hash)
+
+##Read
+  TableName.find(id)
+  find(id, id, id)
+  first
+  last
+  all
+  count
+  order(key)
+  limit(number)
+  where(key: value)
+
+  ex: where(zombie: 'ash').order(:status).limit(10)
+
+##update
+  t = TableName.find(id)
+  t.key = value
+  t.save
+
+  t=TableName.find(id)
+  t.attributes = hash
+  t.save
+
+  t = TableName.find(id)
+  t = TableName.update(hash)
+
+##delete
+  t = TableName.find(id)
+  t.destroy
+
+  TableName.find(id).destroy
+
+  TableName.destroy_all
+
+#################validation
+  validates_presence_of   (not null)
+  numericality        (number only)
+  uniqueness          (no duplicate)
+  confirmation        (password)
+  acceptance          (checkbox)
+  validates_length_of :password, minimum: 3        
+  validates_format_of :email, with: /regex/i      (pattern/format)
+  validates_inclusion_of  :age, in: 21..99        (between two value)
+  validates_exclusion_of  :age, in: 0..21         (values not included/accepted)
+
+  shorthand
+    validates :status, presence:true, length: {minimum: 3}
+
+#################relationship
+  a StrongEntity has_many WeakEntity
+  a Zombie has_many Tweets
+  => has_many :tweets
+
+  WeakEntity belong_to StrongEntity  
+  a Tweet belong_to a Zombie
+  => belongs_to :zombie(singular)
+
+#################view and ERB
+a Table for a View for a Route
+<% %>         just run the code
+<%= %>        run and print result
+<%= yield %>  include file
+
+link_to helper use with routes_path function
+link_to(text_to_show, model_path(model_instance_id))
+link_to(text_to_show, model_path(model_instance))
+link_to(text_to_show, model_instance)
+#################controller
+each entity has its own
+-views
+-controller
+-routes/url
+-model class
+
+rails use convention over configuration 
+if follow convention/default,
+you can avoid configuration
+
+##show action
+@tweet = Tweet.find(param[:id])
+render action: 'status'
+=> status.html.erb
+
+  ##respond xml/json
+  /tweets/1.xml
+  /tweets/1.json
+  respond_to do |format|
+    format.html # show.html.erb
+    format.json { render json: @tweet }
+    format.xml { render xml: @tweet }
+  end
+
+##create action
+/tweets?tweet[status]=im dead
+params = { tweet: {status: "I'm dead"}}
+@tweet = Tweet.create(params[:tweet])
+
+##strong parameter
+use when Creating or Updating with multiple attributes
+params = { tweet: {status: "I'm dead"}}
+params.require(:tweet).permit(:status)
+params.require(:tweet).permit([:status, :location])
+
+##actions
+each action/method in contoller assioated with a views 
+
+index   list
+show    detail
+
+new     new form
+create  create
+
+edit    edit form
+update  update
+
+destroy delete
+
+##redirect and flash
+session                     Works like a per user hash
+flash[:notice]              to send messages to the user
+redirect_to(tweets_path)    redirect browser to different action
+redirect_to(tweets_path, notice: 'blash')
+  ##in view
+  if flash[:notice]
+    flash[:notice]
+  end
+
+##before_action
+edit, update, destroy needs to 
+  look up current id
+  check authorization
+
+before_action :get_tweet, only: [:edit, :update, :destroy]
+before_action :check_auth, only: [:edit, :update, :destroy]
+def get_tweet
+  @tweet = Tweet.find(params[:id])
+end
+def check_auth
+  if session[:zombie_id] != @tweet.zombie_id
+    flash[:notice] = 'sorry you can't edit this tweet'
+    redirect_to tweets_path 
+  end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

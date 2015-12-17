@@ -38,9 +38,6 @@ my.ini/my.cnf
 ########################
 ($this) dont work in succes function ajax
 ########################
-git diff
-gitk
-########################
 tolapheng99@gmail.com
 ########################
 if web.xml<=2.3
