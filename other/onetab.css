@@ -57,10 +57,26 @@ input[type=text] {
     margin: 24px 24px 0 0 ! important;
     position: relative;
     display: inline-block;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 #contentAreaDiv > img{
     z-index: 1;
 }
 #contentAreaDiv > div:last-child, #updateAvailableMsgDiv{
     display: none ! important;
+        
+}
+#contentAreaDiv > div:first-child{
+    margin-bottom: 40px ! important;
+}
+#settingsDiv{
+    margin: 16px 27px 0 0 ! important;
+    z-index: 1;
+    position: fixed ! important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+* {
+    -webkit-box-sizing: initial;
+    -moz-box-sizing: border-box;
+    box-sizing: initial;
 }
