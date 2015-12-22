@@ -9,5 +9,7 @@ where datname = 'mydatabasename'
 ####################################reset template postgres
 UPDATE pg_database SET datistemplate='false' WHERE datname='template1';
 DROP DATABASE template1;
-create database template1; 
+create database template1 TEMPLATE postgres;
 UPDATE pg_database SET datistemplate='true' WHERE datname='template1';
+#####################################start postgres console
+psql -U postgres template1
