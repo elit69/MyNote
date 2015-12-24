@@ -13,3 +13,9 @@ create database template1 TEMPLATE postgres;
 UPDATE pg_database SET datistemplate='true' WHERE datname='template1';
 #####################################start postgres console
 psql -U postgres template1
+#####################################like with array
+select * from (select id, unnest(tags) from posts) as z where z.unnest like 'fa%'
+#####################################select distinct with tsvector
+SELECT * FROM ts_stat('SELECT searchtext_title FROM tbarticle')
+ORDER BY nentry DESC, ndoc DESC, word
+LIMIT 10;
