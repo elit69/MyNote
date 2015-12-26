@@ -15,3 +15,6 @@ git config credential.helper store
 ###############################check Commit history on remote repository
 git log remotename/branchname
 git log origin master
+###############################
+don't forget to add git ignore to maven project 
+and remove target folder
