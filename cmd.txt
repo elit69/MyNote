@@ -21,5 +21,9 @@ java -cp jetty-runner-9.2.13.v20150730.jar org.eclipse.jetty.runner.Runner --sto
 java -cp jetty-runner-9.2.13.v20150730.jar org.eclipse.jetty.runner.Runner --stop
 ###################################################
 java -jar schemaSpy_5.0.0.jar -t pgsql -db articledb -host localhost:5432 -u postgres -p 12345 -o ./schemaspy -dp postgresql-9.3-1104.jdbc41.jar  -s public -noads -gv release
-###################################
+###################################sublime text add new project folder
 subl . -a
+###################################add title console
+@echo off
+title PostgreSQL 9.3.5
+cls
