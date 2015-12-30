@@ -22,19 +22,21 @@ LIMIT 10;
 #######################################view all trigger
 SELECT * FROM information_schema.triggers;
 ######################################other
-CREATE FUNCTION "public"."NewProc22"()
+CREATE or replace FUNCTION "insert_tbhistory"()
   RETURNS trigger AS $BODY$
 BEGIN
-    INSERT INTO "public"."tbhistory" ("memoid", "title", "content", "date") VALUES(NEW.id,NEW.title,NEW.content,now());
+ IF (TG_OP = 'UPDATE') THEN
+
+INSERT INTO "public"."tbhistory" ("memoid", "title", "content", "date") VALUES(OLD.id,OLD.title,OLD.content,now());
+    return null;
+        END IF;
 END
 $BODY$
   LANGUAGE 'plpgsql' VOLATILE COST 100
 ;
+ALTER FUNCTION "public"."insert_tbhistory"() OWNER TO "postgres";
 
 
-
-
-CREATE TRIGGER "triggger_insert_tbhistory" after INSERT
-OR UPDATE ON "tbmemo" FOR EACH ROW EXECUTE PROCEDURE "NewProc22" ();
+CREATE TRIGGER "triggger_insert_tbhistory" after UPDATE  ON "tbmemo" FOR EACH ROW EXECUTE PROCEDURE "insert_tbhistory" ();
 
 
