@@ -40,3 +40,13 @@ ALTER FUNCTION "public"."insert_tbhistory"() OWNER TO "postgres";
 CREATE TRIGGER "triggger_insert_tbhistory" after UPDATE  ON "tbmemo" FOR EACH ROW EXECUTE PROCEDURE "insert_tbhistory" ();
 
 
+##############################################
+with url_list as (select * from tbmemo where domain = 'www.khmersocial.com')
+select * from url_list where url = '/'
+##############################################
+select * from tbmemo where domain || '' || url = 'www.khmersocial.com/'
+##############################################
+select * from tbmemo where concat_ws(domain, '', url) = 'www.khmersocial.com/'
+##############################################
+with url_list as (select id,url,userid from tbmemo where domain = 'www.khmersocial.com')
+select id from url_list where url = '/' and userid = 1
