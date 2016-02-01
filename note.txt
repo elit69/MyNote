@@ -98,7 +98,10 @@ X delete taglib fromheader jsp
 
 create spring hello world on github
 disable uncaught excpetion load eclipse
-fixed permgen space 
+fixed permgen space setenv.bat
+config tomcat manager
+add apr libray to tomcate
+set CATALINA_BASE and CATALINA_HOME
 
 add asending desc
 promoteuser
@@ -109,3 +112,7 @@ FastClick
 Bootpag
 Alertify
 SweetAlert
+#######################################
+@echo off
+title Ping DNS
+cls
