@@ -85,3 +85,27 @@ http://stackoverflow.com/questions/22767205/spring-security-exclude-url-patterns
 { "keys": ["ctrl+shift+r"], "command": "reindent" , "args": { "single_line": false } }
 ##################################################
 error autowired because of postgresl jdbc version 9.4 doesn't support java 7
+##################################################
+notifcation style
+remove bootpage when not fouund
+dump user table
+change name nem sopheak sidebar and header
+if listcontent not found do not show button list all report/user
+X fixed View Blocked Reports
+X get memourl for report
+X change block button to unlock button on disable page
+X delete taglib fromheader jsp
+
+create spring hello world on github
+disable uncaught excpetion load eclipse
+fixed permgen space 
+
+add asending desc
+promoteuser
+
+Datatable
+Slimscroll 
+FastClick
+Bootpag
+Alertify
+SweetAlert
