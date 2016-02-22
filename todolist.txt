@@ -12,20 +12,12 @@
 -spring social
 -remember me
 -connection pool
-################################################
-sd card
-################tomorrow
-cm essay
-ig presentation
-###############monday
-ib1 swot table & company structure
-ib2 exam
-ib2 assignment
 ###############buy list
-pen
 stop moto
 key moto
-mirror moto
+table laptop
+sd card
+headset konfulon lel
 ##################################
 look at map for better route
 bank acc
@@ -37,6 +29,7 @@ refactor file
 research about truemoney
 ROR API
 spring hibernate
+prepare soft
 #############
 sarin	head hunter
 sambo	business service
