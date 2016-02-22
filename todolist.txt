@@ -19,17 +19,17 @@ table laptop
 sd card
 headset konfulon lel
 ##################################
-look at map for better route
-bank acc
-petrol debt
-ifl book
-cm quiz
-ib1 present
-refactor file
-research about truemoney
-ROR API
-spring hibernate
-prepare soft
+	bank acc
+	ifl book
+x	prepare soft
+	look at map for better route
+	petrol debt
+	cm quiz
+	ib1 present
+	refactor file
+	research about truemoney
+	ROR API
+	spring hibernate
 #############
 sarin	head hunter
 sambo	business service
